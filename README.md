@@ -1,2 +1,2 @@
-# dynamic-material-side-nav
-Web component: dynamic-material-side-nav
+# dynamic-side-nav
+Web component: dynamic-side-nav
