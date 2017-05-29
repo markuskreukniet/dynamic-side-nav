@@ -28,4 +28,4 @@ bower install --save MCKreukniet/dynamic-side-nav
 
 ## License
 
-[Apache License 2.0](https://github.com/MCKreukniet/dynamic-side-nav/blob/master/LICENSE.md)]
+[Apache License 2.0](https://github.com/MCKreukniet/dynamic-side-nav/blob/master/LICENSE.md)
