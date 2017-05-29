@@ -1,1 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
+    <title>dynamic-side-nav demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../dynamic-side-nav.html">
+
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+        dynamic-side-nav {
+          --side-nav-z-index: 1;
+        }
+      </style>
+    </custom-style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Basic dynamic-side-nav demo</h3>
+      <demo-snippet>
+        <template>
+          <dynamic-side-nav>
+
+            <ul style="list-style-type: none; padding: 0; margin: 3rem;">
+              <li style="margin-bottom: 1rem;">nav item 1</li>
+              <li style="margin-bottom: 1rem;">nav item 2</li>
+              <li style="margin-bottom: 1rem;">nav item 3</li>
+              <li>nav item 4</li>
+            </ul>
+
+          </dynamic-side-nav>
+        </template>
+      </demo-snippet>
+
+      <h3>Setting button image</h3>
+      <demo-snippet>
+        <template>
+          <dynamic-side-nav image="http://lorempixel.com/32/32/abstract/">
+
+            <ul style="list-style-type: none; padding: 0; margin: 3rem;">
+              <li style="margin-bottom: 1rem;">nav item 1</li>
+              <li style="margin-bottom: 1rem;">nav item 2</li>
+              <li style="margin-bottom: 1rem;">nav item 3</li>
+              <li>nav item 4</li>
+            </ul>
+
+          </dynamic-side-nav>
+        </template>
+      </demo-snippet>
+
+      <h3>Styling</h3>
+      <demo-snippet>
+        <template>
+          <style>
+            #styled-nav {
+              --img-width: 5rem;        /* default: initial */
+              --img-height: 3rem;       /* default: 2rem */
+
+              --drawer-min-width: 2rem; /* default: 1rem */
+              --drawer-max-width: 8rem; /* default: initial */
+
+              --side-nav-z-index: 1;    /* default: 0 */
+            }
+          </style>
+
+          <dynamic-side-nav id="styled-nav">
+
+            <ul style="list-style-type: none; padding: 0; margin: 3rem;">
+              <li style="margin-bottom: 1rem;">nav item 1</li>
+              <li style="margin-bottom: 1rem;">nav item 2</li>
+              <li style="margin-bottom: 1rem;">nav item 3</li>
+              <li>nav item 4</li>
+            </ul>
+
+          </dynamic-side-nav>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>
