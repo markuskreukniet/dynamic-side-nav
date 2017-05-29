@@ -14,9 +14,13 @@
         font-size: 0;
       }
 
-      img {
+      svg, img {
         width: var(--img-width, initial);
         height: var(--img-height, 2rem);
+      }
+
+      svg[hidden], img[hidden] {
+        display: none;
       }
 
       #sideNav {
@@ -41,7 +45,16 @@
     </style>
 
     <button on-click="_onClickMenu">
-      <img src="[[image]]" alt="hamburger menu">
+      <img id="customImage" src="[[image]]" alt="menu" hidden>
+
+      <svg id="defaultImage" viewBox="0 0 80 80" alt="hamburger menu">
+        <g stroke="black" stroke-width="16" stroke-linecap="round">
+          <path d="m 8 8 h 64" />
+          <path d="m 8 40 h 64" />
+          <path d="m 8 72 h 64" />
+        </g>
+      </svg>
+
     </button>
 
     <div id="sideNav" on-click="_onClickSideNav">
@@ -66,13 +79,21 @@
         return {
           image: {
             type: String,
-            value: "/hamburgerMenu.svg"
+            value: "",
+            observer: '_imageChanged'
           }
         };
       }
 
       constructor() {
         super();
+      }
+
+      _imageChanged() {
+        if (this.image) {
+          this.$.customImage.removeAttribute("hidden");
+          this.$.defaultImage.setAttribute("hidden", true);
+        }
       }
 
       _onClickMenu() {
