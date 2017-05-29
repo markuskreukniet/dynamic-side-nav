@@ -1,0 +1,119 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="dynamic-side-nav">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      button {
+        border: none;
+        padding: 0;
+        background: none;
+        font-size: 0;
+      }
+
+      img {
+        width: var(--img-width, initial);
+        height: var(--img-height, 2rem);
+      }
+
+      #sideNav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.4);
+
+        z-index: var(--side-nav-z-index, 0);
+      }
+
+      #navigationDrawer {
+        background-color: #fff;
+        box-shadow: calc(calc(1rem / 13) * 4) 0 calc(calc(1rem / 13) * 12) 0 rgba(0, 0, 0, 0.4); /* TODO */
+
+        min-width: var(--drawer-min-width, 1rem);
+        max-width: var(--drawer-max-width, initial);
+      }
+    </style>
+
+    <button on-click="_onClickMenu">
+      <img src="[[image]]" alt="hamburger menu">
+    </button>
+
+    <div id="sideNav" on-click="_onClickSideNav">
+      <div id="navigationDrawer">
+        <slot></slot>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    /**
+     * `dynamic-side-nav`
+     * dynamic side nav
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class DynamicSideNav extends Polymer.Element {
+      static get is() { return 'dynamic-side-nav'; }
+      static get properties() {
+        return {
+          image: {
+            type: String,
+            value: "/hamburgerMenu.svg"
+          }
+        };
+      }
+
+      constructor() {
+        super();
+      }
+
+      _onClickMenu() {
+        var sideNav = this.$.sideNav;
+        var navigationDrawer = this.$.navigationDrawer;
+
+        // 'display = "flex"' triggers transition, so first 'transition = 0'
+        navigationDrawer.style.transition = "0";
+        sideNav.style.display = "flex";
+
+        // Parent element can't have 'display: none;', else offsetWidth is 0
+        navigationDrawer.style.marginLeft = 0 - navigationDrawer.offsetWidth + "px";
+
+        window.setTimeout(function () {
+          navigationDrawer.style.transition = "0.3s";
+          navigationDrawer.style.marginLeft = "0";
+        }, 0);
+      }
+
+      _onClickSideNav(e) {
+        //
+        if (e.target.id !== "sideNav")
+          return;
+
+        var sideNav = this.$.sideNav;
+        var navigationDrawer = this.$.navigationDrawer;
+
+        // add event listener
+        navigationDrawer.addEventListener("transitionend", afterMarginLeft);
+
+        // triggers transition
+        navigationDrawer.style.marginLeft = 0 - navigationDrawer.offsetWidth + "px";
+
+        // transitionend
+        function afterMarginLeft() {
+          sideNav.style.display = "none";
+          navigationDrawer.removeEventListener("transitionend", afterMarginLeft);
+        }
+      }
+    }
+
+    window.customElements.define(DynamicSideNav.is, DynamicSideNav);
+  </script>
+</dom-module>
