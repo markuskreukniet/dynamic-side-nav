@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-	<g stroke="black" stroke-width="16" stroke-linecap="round">
-		<path d="m 8 8 h 64" />
-		<path d="m 8 40 h 64" />
-		<path d="m 8 72 h 64" />
-	</g>
-</svg>
