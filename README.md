@@ -2,7 +2,7 @@
 
 # \<dynamic-side-nav\>
 
-Thee web component `dynamic-side-nav` is a button. When a user touches the button, a side navigation wil open. The content in the side navigation determines the width of the navigation.
+The web component `dynamic-side-nav` is a button. When a user touches the button, a side navigation wil open. The content in the side navigation determines the width of the navigation.
 
 ## Installation
 
