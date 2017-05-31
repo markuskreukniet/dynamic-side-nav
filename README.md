@@ -14,9 +14,14 @@ bower install --save MCKreukniet/dynamic-side-nav
 
 <!--
 ```
-<custom-element-demo height="21rem">
+<custom-element-demo>
   <template>
     <link rel="import" href="dynamic-side-nav.html">
+    <style>
+      dynamic-side-nav {
+        height: 21rem;
+      }
+    </style>
     <next-code-block></next-code-block>
   </template>
 </custom-element-demo>
