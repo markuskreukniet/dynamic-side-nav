@@ -14,7 +14,7 @@ bower install --save MCKreukniet/dynamic-side-nav
 
 <!--
 ```
-<custom-element-demo>
+<custom-element-demo height="21rem">
   <template>
     <link rel="import" href="dynamic-side-nav.html">
     <next-code-block></next-code-block>
@@ -23,7 +23,16 @@ bower install --save MCKreukniet/dynamic-side-nav
 ```
 -->
 ```html
-<dynamic-side-nav></dynamic-side-nav>
+<dynamic-side-nav>
+
+  <ul style="list-style-type: none; padding: 0; margin: 3rem;">
+    <li style="margin-bottom: 1rem;">nav item 1</li>
+    <li style="margin-bottom: 1rem;">nav item 2</li>
+    <li style="margin-bottom: 1rem;">nav item 3</li>
+    <li>nav item 4</li>
+  </ul>
+
+</dynamic-side-nav>
 ```
 
 ## License
