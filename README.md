@@ -40,6 +40,17 @@ bower install --save MCKreukniet/dynamic-side-nav
 </dynamic-side-nav>
 ```
 
+## Styling
+
+| Custom property    | Description | Default |
+| ---------------    | ----------- | ------- |
+| --img-width        | Width of the button | initial |
+| --img-height       | Height of the button | 2rem |
+| --drawer-min-width | Mimimal width of the content container | 1rem |
+| --drawer-max-width | Maximal width of the content container | initial |
+| --img-color        | Color of the default image | rgba(0, 0, 0, 0.87) |
+| --side-nav-z-index | z-index of the content container and the overlay | 0 |
+
 ## License
 
 [Apache License 2.0](https://github.com/MCKreukniet/dynamic-side-nav/blob/master/LICENSE.md)
