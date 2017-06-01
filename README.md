@@ -46,9 +46,10 @@ bower install --save MCKreukniet/dynamic-side-nav
 | ---------------    | ----------- | ------- |
 | --img-width        | Width of the button | initial |
 | --img-height       | Height of the button | 2rem |
+| --img-color        | Color of the default image | rgba(0, 0, 0, 0.87) |
+| --img-linecap      | Shape at the end of the lines. Suggested values: round, square | square |
 | --drawer-min-width | Minimal width of the content container | 1rem |
 | --drawer-max-width | Maximal width of the content container | initial |
-| --img-color        | Color of the default image | rgba(0, 0, 0, 0.87) |
 | --side-nav-z-index | z-index of the content container and the overlay | 0 |
 
 ## License

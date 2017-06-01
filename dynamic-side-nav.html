@@ -25,6 +25,7 @@
 
       svg > g {
         stroke: var(--img-color, rgba(0, 0, 0, 0.87)); /* https://material.io/ - Text and background colors */
+        stroke-linecap: var(--img-linecap, square);
       }
 
       #sideNav {
@@ -52,7 +53,7 @@
       <img id="customImage" src="[[image]]" alt="menu" hidden>
 
       <svg id="defaultImage" viewBox="0 0 80 80" alt="hamburger menu">
-        <g stroke-width="16" stroke-linecap="round">
+        <g stroke-width="16">
           <path d="m 8 8 h 64 m 0 32 h -64 m 0 32 h 64" />
         </g>
       </svg>
