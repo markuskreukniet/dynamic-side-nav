@@ -50,6 +50,7 @@ bower install --save MCKreukniet/dynamic-side-nav
 | `--img-linecap`      | Shape at the end of the lines. Suggested values: `round`, `square` | `square` |
 | `--drawer-min-width` | Minimal width of the content container | `1rem` |
 | `--drawer-max-width` | Maximal width of the content container | `initial` |
+| `--drawer-color`     | Color of the content container | `#fff` |
 | `--side-nav-z-index` | `z-index` of the content container and the overlay | `0` |
 
 ## License

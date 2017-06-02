@@ -41,7 +41,7 @@
       }
 
       #navigationDrawer {
-        background-color: #fff;
+        background-color: var(--drawer-color, #fff);
         box-shadow: calc(calc(1rem / 13) * 4) 0 calc(calc(1rem / 13) * 12) 0 rgba(0, 0, 0, 0.4); /* TODO */
 
         min-width: var(--drawer-min-width, 1rem);
@@ -50,9 +50,9 @@
     </style>
 
     <button on-click="_onClickMenu">
-      <img id="customImage" src="[[image]]" alt="menu" hidden>
+      <img id="customImage" src="[[image]]" alt="" hidden>
 
-      <svg id="defaultImage" viewBox="0 0 80 80" alt="hamburger menu">
+      <svg id="defaultImage" viewBox="0 0 80 80">
         <g stroke-width="16">
           <path d="m 8 8 h 64 m 0 32 h -64 m 0 32 h 64" />
         </g>
