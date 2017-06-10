@@ -49,15 +49,15 @@ Change the image of the button. The string value is used in the `src` attribute 
 
 | Custom property              | Description | Default |
 | ---------------------------- | ----------- | ------- |
-| `--img-width`                | Width of the button | `initial` |
-| `--img-height`               | Height of the button | `2rem` |
-| `--img-color`                | Color of the default image | `rgba(0, 0, 0, 0.87)` |
+| `--img-width`                | `width` of the button | `initial` |
+| `--img-height`               | `height` of the button | `2rem` |
+| `--img-color`                | `color` of the default image | `rgba(0, 0, 0, 0.87)` |
 | `--img-linecap`              | Shape at the end of the lines. Suggested values: `round`, `square` | `square` |
-| `--drawer-min-width`         | Minimal width of the content container | `1rem` |
-| `--drawer-max-width`         | Maximal width of the content container | `initial` |
-| `--drawer-background-color`  | Background color of the content container | `#fff` |
+| `--drawer-min-width`         | `min-width` of the content container | `1rem` |
+| `--drawer-max-width`         | `max-width` of the content container | `initial` |
+| `--drawer-background-color`  | `background-color` of the content container | `#fff` |
 | `--drawer-box-shadow`        | `box-shadow` of the content container | `calc(calc(1rem / 13) * 4) 0 calc(calc(1rem / 13) * 12) 0 rgba(0, 0, 0, 0.4)` |
-| `--overlay-background-color` | Background color of the overlay | `rgba(0, 0, 0, 0.4)` |
+| `--overlay-background-color` | `background-color` of the overlay | `rgba(0, 0, 0, 0.4)` |
 | `--side-nav-z-index`         | `z-index` of the content container and the overlay | `0` |
 
 ## License
