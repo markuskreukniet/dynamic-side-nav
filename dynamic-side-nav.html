@@ -28,7 +28,7 @@
         stroke-linecap: var(--img-linecap, square);
       }
 
-      #sideNav {
+      #overlay {
         display: none;
         position: fixed;
         top: 0;
@@ -40,7 +40,7 @@
         z-index: var(--side-nav-z-index, 0);
       }
 
-      #navigationDrawer {
+      #contentContainer {
         background-color: var(--drawer-background-color, #fff);
         box-shadow: var(--drawer-box-shadow,
           calc(calc(1rem / 13) * 4) 0 calc(calc(1rem / 13) * 12) 0 rgba(0, 0, 0, 0.4));
@@ -61,8 +61,8 @@
 
     </button>
 
-    <div id="sideNav" on-click="_onClickSideNav">
-      <div id="navigationDrawer">
+    <div id="overlay" on-click="_onClickOverlay">
+      <div id="contentContainer">
         <slot></slot>
       </div>
     </div>
@@ -101,40 +101,40 @@
       }
 
       _onClickMenu() {
-        var sideNav = this.$.sideNav;
-        var navigationDrawer = this.$.navigationDrawer;
+        var overlay = this.$.overlay;
+        var contentContainer = this.$.contentContainer;
 
         // 'display = "flex"' triggers transition, so first 'transition = 0'
-        navigationDrawer.style.transition = "0";
-        sideNav.style.display = "flex";
+        contentContainer.style.transition = "0";
+        overlay.style.display = "flex";
 
         // Parent element can't have 'display: none;', else offsetWidth is 0
-        navigationDrawer.style.marginLeft = 0 - navigationDrawer.offsetWidth + "px";
+        contentContainer.style.marginLeft = 0 - contentContainer.offsetWidth + "px";
 
         window.setTimeout(function () {
-          navigationDrawer.style.transition = "0.3s";
-          navigationDrawer.style.marginLeft = "0";
+          contentContainer.style.transition = "0.3s";
+          contentContainer.style.marginLeft = "0";
         }, 0);
       }
 
-      _onClickSideNav(e) {
+      _onClickOverlay(e) {
         //
-        if (e.target.id !== "sideNav")
+        if (e.target.id !== "overlay")
           return;
 
-        var sideNav = this.$.sideNav;
-        var navigationDrawer = this.$.navigationDrawer;
+        var overlay = this.$.overlay;
+        var contentContainer = this.$.contentContainer;
 
         // add event listener
-        navigationDrawer.addEventListener("transitionend", afterMarginLeft);
+        contentContainer.addEventListener("transitionend", afterMarginLeft);
 
         // triggers transition
-        navigationDrawer.style.marginLeft = 0 - navigationDrawer.offsetWidth + "px";
+        contentContainer.style.marginLeft = 0 - contentContainer.offsetWidth + "px";
 
         // transitionend
         function afterMarginLeft() {
-          sideNav.style.display = "none";
-          navigationDrawer.removeEventListener("transitionend", afterMarginLeft);
+          overlay.style.display = "none";
+          contentContainer.removeEventListener("transitionend", afterMarginLeft);
         }
       }
     }
