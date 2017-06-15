@@ -49,7 +49,7 @@ Change the image of the button. The string value is used in the `src` attribute 
 
 | Custom property              | Description | Default |
 | ---------------------------- | ----------- | ------- |
-| `--img-width`                | `width` of the button | `initial` |
+| `--img-width`                | `width` of the button | `2rem` |
 | `--img-height`               | `height` of the button | `2rem` |
 | `--img-color`                | `color` of the default image | `rgba(0, 0, 0, 0.87)` |
 | `--img-linecap`              | Shape at the end of the lines. Suggested values: `round`, `square` | `square` |
