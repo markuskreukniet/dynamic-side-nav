@@ -41,12 +41,12 @@
       }
 
       #contentContainer {
-        background-color: var(--drawer-background-color, #fff);
-        box-shadow: var(--drawer-box-shadow,
+        background-color: var(--content-background-color, #fff);
+        box-shadow: var(--content-box-shadow,
           calc(calc(1rem / 13) * 4) 0 calc(calc(1rem / 13) * 12) 0 rgba(0, 0, 0, 0.4));
 
-        min-width: var(--drawer-min-width, 1rem);
-        max-width: var(--drawer-max-width, initial);
+        min-width: var(--content-min-width, 1rem);
+        max-width: var(--content-max-width, initial);
       }
     </style>
 
@@ -58,7 +58,6 @@
           <path d="m 8 8 h 64 m 0 32 h -64 m 0 32 h 64" />
         </g>
       </svg>
-
     </button>
 
     <div id="overlay" on-click="_onClickOverlay">

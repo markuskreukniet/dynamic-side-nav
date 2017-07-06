@@ -53,10 +53,10 @@ Change the image in the button. The string value is used in the `src` attribute 
 | `--img-height`               | `height` of the image in the button | `2rem` |
 | `--img-color`                | `stroke` of the default SVG image in the button | `rgba(0, 0, 0, 0.87)` |
 | `--img-linecap`              | `stroke-linecap` of the default SVG image in the button. Suggested values: `round`, `square` | `square` |
-| `--drawer-min-width`         | `min-width` of the content container | `1rem` |
-| `--drawer-max-width`         | `max-width` of the content container | `initial` |
-| `--drawer-background-color`  | `background-color` of the content container | `#fff` |
-| `--drawer-box-shadow`        | `box-shadow` of the content container | `calc(calc(1rem / 13) * 4) 0 calc(calc(1rem / 13) * 12) 0 rgba(0, 0, 0, 0.4)` |
+| `--content-min-width`         | `min-width` of the content container | `1rem` |
+| `--content-max-width`         | `max-width` of the content container | `initial` |
+| `--content-background-color`  | `background-color` of the content container | `#fff` |
+| `--content-box-shadow`        | `box-shadow` of the content container | `calc(calc(1rem / 13) * 4) 0 calc(calc(1rem / 13) * 12) 0 rgba(0, 0, 0, 0.4)` |
 | `--overlay-background-color` | `background-color` of the overlay | `rgba(0, 0, 0, 0.4)` |
 | `--side-nav-z-index`         | `z-index` of the content container and the overlay | `0` |
 
