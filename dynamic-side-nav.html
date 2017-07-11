@@ -19,7 +19,7 @@
         height: var(--img-height, 2rem); /* IE11 needs fixed height for svg */
       }
 
-      svg[hidden], img[hidden] {
+      svg[hidden], img[hidden], path[hidden] {
         display: none;
       }
 
@@ -50,12 +50,13 @@
       }
     </style>
 
-    <button on-click="_onClickMenu">
+    <button on-click="_onClickOpenButton">
       <img id="customImage" src="[[image]]" alt="" hidden>
 
       <svg id="defaultImage" viewBox="0 0 80 80">
         <g stroke-width="16">
-          <path d="m 8 8 h 64 m 0 32 h -64 m 0 32 h 64" />
+          <path id="defaultImageOpen" d="m 8 8 h 64 m 0 32 h -64 m 0 32 h 64" />
+          <path id="defaultImageClose" hidden d="m 12 12 l 56 56 m 0 -56 l -56 56" /> <!-- stroke-linecap="square" is bigger then round -->
         </g>
       </svg>
     </button>
@@ -99,7 +100,7 @@
         }
       }
 
-      _onClickMenu() {
+      _onClickOpenButton() {
         var overlay = this.$.overlay;
         var contentContainer = this.$.contentContainer;
 
@@ -114,6 +115,12 @@
           contentContainer.style.transition = "0.3s";
           contentContainer.style.marginLeft = "0";
         }, 0);
+
+        // switch button
+        if (!this.image) {
+          this.$.defaultImageOpen.setAttribute("hidden", true);
+          this.$.defaultImageClose.removeAttribute("hidden");
+        }
       }
 
       _onClickOverlay(e) {
@@ -134,6 +141,12 @@
         function afterMarginLeft() {
           overlay.style.display = "none";
           contentContainer.removeEventListener("transitionend", afterMarginLeft);
+        }
+
+        // switch button
+        if (!this.image) {
+          this.$.defaultImageClose.setAttribute("hidden", true);
+          this.$.defaultImageOpen.removeAttribute("hidden");
         }
       }
     }
