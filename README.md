@@ -42,7 +42,7 @@ bower install --save MCKreukniet/dynamic-side-nav
 
 ## API Reference
 ### Properties
-**image** : string  
+**image-open** : string  
 Change the image in the button. The string value is used in the `src` attribute of the image.
 
 ## Styling

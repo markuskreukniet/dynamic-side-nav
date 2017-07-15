@@ -51,7 +51,7 @@
     </style>
 
     <button on-click="_onClickOpenButton">
-      <img id="customImage" src="[[image]]" alt="" hidden>
+      <img id="customImage" src="[[imageOpen]]" alt="" hidden>
 
       <svg id="defaultImage" viewBox="0 0 80 80">
         <g stroke-width="16">
@@ -81,7 +81,7 @@
       static get is() { return 'dynamic-side-nav'; }
       static get properties() {
         return {
-          image: {
+          imageOpen: {
             type: String,
             value: "",
             observer: '_imageChanged'
@@ -94,7 +94,7 @@
       }
 
       _imageChanged() {
-        if (this.image) {
+        if (this.imageOpen) {
           this.$.customImage.removeAttribute("hidden");
           this.$.defaultImage.setAttribute("hidden", true);
         }
@@ -117,7 +117,7 @@
         }, 0);
 
         // switch button
-        if (!this.image) {
+        if (!this.imageOpen) {
           this.$.defaultImageOpen.setAttribute("hidden", true);
           this.$.defaultImageClose.removeAttribute("hidden");
         }
@@ -144,7 +144,7 @@
         }
 
         // switch button
-        if (!this.image) {
+        if (!this.imageOpen) {
           this.$.defaultImageClose.setAttribute("hidden", true);
           this.$.defaultImageOpen.removeAttribute("hidden");
         }
