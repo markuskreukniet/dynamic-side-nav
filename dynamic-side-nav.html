@@ -116,7 +116,10 @@
           contentContainer.style.marginLeft = "0";
         }, 0);
 
-        this._switchButtons();
+        if (!this.imageOpen) {
+          this.$.defaultImageOpen.setAttribute("hidden", true);
+          this.$.defaultImageClose.removeAttribute("hidden");
+        }
       }
 
       _onClickOverlay(e) {
@@ -139,18 +142,9 @@
           contentContainer.removeEventListener("transitionend", afterMarginLeft);
         }
 
-        this._switchButtons();
-      }
-
-      _switchButtons() {
         if (!this.imageOpen) {
-          if (this.$.defaultImageClose.hasAttribute("hidden")) {
-            this.$.defaultImageOpen.setAttribute("hidden", true);
-            this.$.defaultImageClose.removeAttribute("hidden");
-          } else {
-            this.$.defaultImageClose.setAttribute("hidden", true);
-            this.$.defaultImageOpen.removeAttribute("hidden");
-          }
+          this.$.defaultImageClose.setAttribute("hidden", true);
+          this.$.defaultImageOpen.removeAttribute("hidden");
         }
       }
     }
