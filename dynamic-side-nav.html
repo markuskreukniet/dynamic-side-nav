@@ -51,7 +51,7 @@
     </style>
 
     <button on-click="_onClickOpenButton">
-      <img id="customImage" src="[[imageOpen]]" alt="" hidden>
+      <img id="customImageOpen" src="[[imageOpen]]" alt="" hidden>
 
       <svg id="defaultImage" viewBox="0 0 80 80">
         <g stroke-width="16">
@@ -84,7 +84,7 @@
           imageOpen: {
             type: String,
             value: "",
-            observer: '_imageChanged'
+            observer: '_imageOpenChanged'
           }
         };
       }
@@ -93,9 +93,9 @@
         super();
       }
 
-      _imageChanged() {
+      _imageOpenChanged() {
         if (this.imageOpen) {
-          this.$.customImage.removeAttribute("hidden");
+          this.$.customImageOpen.removeAttribute("hidden");
           this.$.defaultImage.setAttribute("hidden", true);
         }
       }
