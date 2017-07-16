@@ -116,6 +116,7 @@
           contentContainer.style.marginLeft = "0";
         }, 0);
 
+        // switch button
         if (!this.imageOpen) {
           this.$.defaultImageOpen.setAttribute("hidden", true);
           this.$.defaultImageClose.removeAttribute("hidden");
@@ -142,6 +143,7 @@
           contentContainer.removeEventListener("transitionend", afterMarginLeft);
         }
 
+        // switch button
         if (!this.imageOpen) {
           this.$.defaultImageClose.setAttribute("hidden", true);
           this.$.defaultImageOpen.removeAttribute("hidden");
