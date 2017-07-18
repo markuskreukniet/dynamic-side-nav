@@ -59,6 +59,8 @@
           <path id="defaultImageClose" hidden d="m 12 12 l 56 56 m 0 -56 l -56 56" /> <!-- stroke-linecap="square" is bigger then round -->
         </g>
       </svg>
+
+      <img id="customImageClose" src="[[imageClose]]" alt="" hidden>
     </button>
 
     <div id="overlay" on-click="_onClickOverlay">
@@ -85,6 +87,10 @@
             type: String,
             value: "",
             observer: '_imageOpenChanged'
+          },
+          imageClose: {
+            type: String,
+            value: ""
           }
         };
       }
@@ -95,8 +101,7 @@
 
       _imageOpenChanged() {
         if (this.imageOpen) {
-          this.$.customImageOpen.removeAttribute("hidden");
-          this.$.defaultImage.setAttribute("hidden", true);
+          this._toCustomImageOpen();
         }
       }
 
@@ -117,9 +122,10 @@
         }, 0);
 
         // switch button
-        if (!this.imageOpen) {
-          this.$.defaultImageOpen.setAttribute("hidden", true);
-          this.$.defaultImageClose.removeAttribute("hidden");
+        if (!this.imageClose) {
+          this._toDefaultImageClose();
+        } else {
+          this._toCustomImageClose();
         }
       }
 
@@ -145,9 +151,40 @@
 
         // switch button
         if (!this.imageOpen) {
-          this.$.defaultImageClose.setAttribute("hidden", true);
-          this.$.defaultImageOpen.removeAttribute("hidden");
+          this._toDefaultImageOpen();
+        } else {
+          this._toCustomImageOpen();
         }
+      }
+
+      _toDefaultImageOpen() {
+        this.$.customImageClose.setAttribute("hidden", true);
+
+        this.$.defaultImage.removeAttribute("hidden");
+        this.$.defaultImageClose.setAttribute("hidden", true);
+        this.$.defaultImageOpen.removeAttribute("hidden");
+      }
+
+      _toDefaultImageClose() {
+        this.$.customImageOpen.setAttribute("hidden", true);
+
+        this.$.defaultImage.removeAttribute("hidden");
+        this.$.defaultImageOpen.setAttribute("hidden", true);
+        this.$.defaultImageClose.removeAttribute("hidden");
+      }
+
+      _toCustomImageOpen() {
+        this.$.defaultImage.setAttribute("hidden", true);
+
+        this.$.customImageClose.setAttribute("hidden", true);
+        this.$.customImageOpen.removeAttribute("hidden");
+      }
+
+      _toCustomImageClose() {
+        this.$.defaultImage.setAttribute("hidden", true);
+
+        this.$.customImageOpen.setAttribute("hidden", true);
+        this.$.customImageClose.removeAttribute("hidden");
       }
     }
 
