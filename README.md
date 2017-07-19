@@ -59,7 +59,7 @@ Change the image in the button, which can be visible when the side navigation is
 | `--content-min-width`         | `min-width` of the content container | `1rem` |
 | `--content-max-width`         | `max-width` of the content container | `initial` |
 | `--content-background-color`  | `background-color` of the content container | `#fff` |
-| `--content-box-shadow`        | `box-shadow` of the content container | `calc(calc(1rem / 13) * 4) 0 calc(calc(1rem / 13) * 12) 0 rgba(0, 0, 0, 0.4)` |
+| `--content-box-shadow`        | `box-shadow` of the content container | `calc(calc(1rem / 13) * 2) 0 calc(calc(1rem / 13) * 14) 0 rgba(0, 0, 0, 0.4)` |
 | `--overlay-background-color` | `background-color` of the overlay | `rgba(0, 0, 0, 0.4)` |
 | `--side-nav-z-index`         | `z-index` of the content container and the overlay | `0` |
 
