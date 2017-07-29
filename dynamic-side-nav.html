@@ -120,10 +120,10 @@
         var contentContainer = this.$.contentContainer;
 
         if (this.side === "right") {
-          contentContainer.style.left = "initial";
+          contentContainer.style.left = "auto"; // IE11 needs auto, initial doens't work
           contentContainer.style.right = "0";
         } else {
-          contentContainer.style.right = "initial";
+          contentContainer.style.right = "auto"; // IE11 needs auto, initial doens't work
           contentContainer.style.left = "0";
         }
       }
