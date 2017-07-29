@@ -41,6 +41,10 @@
       }
 
       #contentContainer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
         background-color: var(--content-background-color, #fff);
         box-shadow: var(--content-box-shadow,
           calc(calc(1rem / 13) * 2) 0 calc(calc(1rem / 13) * 14) 0 rgba(0, 0, 0, 0.4));
@@ -91,6 +95,11 @@
           imageClose: {
             type: String,
             value: ""
+          },
+          side: {
+            type: String,
+            value: "",
+            observer: '_sideChanged'
           }
         };
       }
@@ -107,6 +116,18 @@
         }
       }
 
+      _sideChanged() {
+        var contentContainer = this.$.contentContainer;
+
+        if (this.side === "right") {
+          contentContainer.style.left = "initial";
+          contentContainer.style.right = "0";
+        } else {
+          contentContainer.style.right = "initial";
+          contentContainer.style.left = "0";
+        }
+      }
+
       _onClickOpenButton() {
         var overlay = this.$.overlay;
         var contentContainer = this.$.contentContainer;
@@ -116,11 +137,17 @@
         overlay.style.display = "flex";
 
         // Parent element can't have 'display: none;', else offsetWidth is 0
-        contentContainer.style.marginLeft = 0 - contentContainer.offsetWidth + "px";
+        this._setMinMarginXOnElement(contentContainer);
 
+        var _side = this.side;
         window.setTimeout(function () {
           contentContainer.style.transition = "0.3s";
-          contentContainer.style.marginLeft = "0";
+
+          if (_side === "right") {
+            contentContainer.style.marginRight = "0";
+          } else {
+            contentContainer.style.marginLeft = "0";
+          }
         }, 0);
 
         // switch button
@@ -140,15 +167,15 @@
         var contentContainer = this.$.contentContainer;
 
         // add event listener
-        contentContainer.addEventListener("transitionend", afterMarginLeft);
+        contentContainer.addEventListener("transitionend", afterMarginX);
 
         // triggers transition
-        contentContainer.style.marginLeft = 0 - contentContainer.offsetWidth + "px";
+        this._setMinMarginXOnElement(contentContainer);
 
         // transitionend
-        function afterMarginLeft() {
+        function afterMarginX() {
           overlay.style.display = "none";
-          contentContainer.removeEventListener("transitionend", afterMarginLeft);
+          contentContainer.removeEventListener("transitionend", afterMarginX);
         }
 
         // switch button
@@ -156,6 +183,15 @@
           this._toDefaultImageOpen();
         } else {
           this._toCustomImageOpen();
+        }
+      }
+
+      _setMinMarginXOnElement(element) {
+        var marginX = 0 - element.offsetWidth + "px";
+        if (this.side === "right") {
+          element.style.marginRight = marginX;
+        } else {
+          element.style.marginLeft = marginX;
         }
       }
 
