@@ -49,7 +49,7 @@ Change the image in the open button, which is the button that can open the side 
 Change the image in the button, which can be visible when the side navigation is open. The string value is used in the `src` attribute of the image.
 
 **side** : string = "left"  
-Choose which side the side navigation opens. Possible values are: 'left' and 'right'.
+Choose which side the side navigation opens. Possible values are: `left` and `right`.
 
 ## Styling
 
