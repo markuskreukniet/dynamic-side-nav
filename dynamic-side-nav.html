@@ -14,9 +14,14 @@
         font-size: 0;
       }
 
-      svg, img {
-        width: var(--img-width, 2rem); /* IE11 needs fixed width for svg */
-        height: var(--img-height, 2rem); /* IE11 needs fixed height for svg */
+      .button-image {
+        width: var(--img-open-width, 2rem); /* IE11 needs fixed width for svg */
+        height: var(--img-open-height, 2rem); /* IE11 needs fixed height for svg */
+      }
+
+      .button-image--close {
+        width: var(--img-close-width, 2rem); /* IE11 needs fixed width for svg */
+        height: var(--img-close-height, 2rem); /* IE11 needs fixed height for svg */
       }
 
       svg[hidden], img[hidden], path[hidden] {
@@ -55,16 +60,16 @@
     </style>
 
     <button on-click="_onClickOpenButton">
-      <img id="customImageOpen" src="[[imageOpen]]" alt="" hidden>
+      <img id="customImageOpen" class="button-image" src="[[imageOpen]]" alt="" hidden>
 
-      <svg id="defaultImage" viewBox="0 0 80 80">
+      <svg id="defaultImage" class="button-image" viewBox="0 0 80 80">
         <g stroke-width="16">
           <path id="defaultImageOpen" d="m 8 8 h 64 m 0 32 h -64 m 0 32 h 64" />
           <path id="defaultImageClose" hidden d="m 12 12 l 56 56 m 0 -56 l -56 56" /> <!-- stroke-linecap="square" is bigger then round -->
         </g>
       </svg>
 
-      <img id="customImageClose" src="[[imageClose]]" alt="" hidden>
+      <img id="customImageClose" class="button-image--close" src="[[imageClose]]" alt="" hidden>
     </button>
 
     <div id="overlay" on-click="_onClickOverlay">
@@ -198,6 +203,8 @@
       _toDefaultImageOpen() {
         this.$.customImageClose.setAttribute("hidden", true);
 
+        this.$.defaultImage.classList = ["button-image"];
+
         this.$.defaultImage.removeAttribute("hidden");
         this.$.defaultImageClose.setAttribute("hidden", true);
         this.$.defaultImageOpen.removeAttribute("hidden");
@@ -205,6 +212,8 @@
 
       _toDefaultImageClose() {
         this.$.customImageOpen.setAttribute("hidden", true);
+
+        this.$.defaultImage.classList = ["button-image--close"];
 
         this.$.defaultImage.removeAttribute("hidden");
         this.$.defaultImageOpen.setAttribute("hidden", true);
