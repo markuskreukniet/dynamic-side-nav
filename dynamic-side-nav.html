@@ -203,7 +203,7 @@
       _toDefaultImageOpen() {
         this.$.customImageClose.setAttribute("hidden", true);
 
-        this.$.defaultImage.classList = ["button-image"];
+        this.$.defaultImage.setAttribute("class", "button-image"); // 'className.baseVal' and 'classList' don't work in IE 11
 
         this.$.defaultImage.removeAttribute("hidden");
         this.$.defaultImageClose.setAttribute("hidden", true);
@@ -213,7 +213,7 @@
       _toDefaultImageClose() {
         this.$.customImageOpen.setAttribute("hidden", true);
 
-        this.$.defaultImage.classList = ["button-image--close"];
+        this.$.defaultImage.setAttribute("class", "button-image--close"); // 'className.baseVal' and 'classList' don't work in IE 11
 
         this.$.defaultImage.removeAttribute("hidden");
         this.$.defaultImageOpen.setAttribute("hidden", true);
