@@ -64,7 +64,7 @@ Choose which side the side navigation opens. Possible values are: `left` and `ri
 | `--content-min-width`        | `min-width` of the content container | `1rem` |
 | `--content-max-width`        | `max-width` of the content container | `initial` |
 | `--content-background-color` | `background-color` of the content container | `#fff` |
-| `--content-box-shadow`       | `box-shadow` of the content container | `0.30769230769rem 0 1.84615384615rem 0 rgba(0, 0, 0, 0.4)` |
+| `--content-box-shadow`       | `box-shadow` of the content container | `0 0 1.84615384615rem 0.30769230769rem rgba(0, 0, 0, 0.4)` |
 | `--overlay-background-color` | `background-color` of the overlay | `rgba(0, 0, 0, 0.4)` |
 | `--side-nav-z-index`         | `z-index` of the content container and the overlay | `0` |
 
