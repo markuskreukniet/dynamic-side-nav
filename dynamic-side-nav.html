@@ -28,9 +28,14 @@
         display: none;
       }
 
-      svg > g {
-        stroke: var(--img-color, rgba(0, 0, 0, 0.87)); /* https://material.io/ - Text and background colors */
-        stroke-linecap: var(--img-linecap, square);
+      .button-image__group-path {
+        stroke: var(--img-open-color, rgba(0, 0, 0, 0.87)); /* https://material.io/ - Text and background colors */
+        stroke-linecap: var(--img-open-linecap, square);
+      }
+
+      .button-image__group-path--close {
+        stroke: var(--img-close-color, rgba(0, 0, 0, 0.87)); /* https://material.io/ - Text and background colors */
+        stroke-linecap: var(--img-close-linecap, square);
       }
 
       #overlay {
@@ -65,8 +70,8 @@
 
       <svg id="defaultImage" class="button-image" viewBox="0 0 80 80">
         <g stroke-width="16">
-          <path id="defaultImageOpen" d="m 8 8 h 64 m 0 32 h -64 m 0 32 h 64" />
-          <path id="defaultImageClose" hidden d="m 12 12 l 56 56 m 0 -56 l -56 56" /> <!-- stroke-linecap="square" is bigger then round -->
+          <path id="defaultImageOpen" class="button-image__group-path" d="m 8 8 h 64 m 0 32 h -64 m 0 32 h 64" />
+          <path id="defaultImageClose" class="button-image__group-path--close" hidden d="m 12 12 l 56 56 m 0 -56 l -56 56" /> <!-- stroke-linecap="square" is bigger then round -->
         </g>
       </svg>
 
