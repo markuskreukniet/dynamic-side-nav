@@ -59,8 +59,10 @@ Choose which side the side navigation opens. Possible values are: `left` and `ri
 | `--img-open-height`          | `height` of the image in the open button | `2rem` |
 | `--img-close-width`          | `width` of the image in the close button | `2rem` |
 | `--img-close-height`         | `height` of the image in the close button | `2rem` |
-| `--img-color`                | `stroke` of the default SVG image in the button | `rgba(0, 0, 0, 0.87)` |
-| `--img-linecap`              | `stroke-linecap` of the default SVG image in the button. Suggested values: `round`, `square` | `square` |
+| `--img-open-color`           | `stroke` of the default SVG image in the open button | `rgba(0, 0, 0, 0.87)` |
+| `--img-open-linecap`         | `stroke-linecap` of the default SVG image in the open button. Suggested values: `round`, `square` | `square` |
+| `--img-close-color`          | `stroke` of the default SVG image in the close button | `rgba(0, 0, 0, 0.87)` |
+| `--img-close-linecap`        | `stroke-linecap` of the default SVG image in the close button. Suggested values: `round`, `square` | `square` |
 | `--content-min-width`        | `min-width` of the content container | `1rem` |
 | `--content-max-width`        | `max-width` of the content container | `initial` |
 | `--content-background-color` | `background-color` of the content container | `#fff` |
