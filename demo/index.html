@@ -60,27 +60,29 @@
       <h3>Styling</h3>
       <demo-snippet>
         <template>
-          <style>
-            #styled-nav {
-              --img-open-width: 5rem;
-              --img-open-height: 3rem;
-              --img-close-width: 2rem;
-              --img-close-height: 1rem;
-              --img-open-color: blue;
-              --img-open-linecap: round;
-              --img-close-color: green;
-              --img-close-linecap: square;
+          <custom-style>
+            <style is="custom-style" include="demo-pages-shared-styles">
+              #styled-nav {
+                --img-open-width: 5rem;
+                --img-open-height: 3rem;
+                --img-close-width: 2rem;
+                --img-close-height: 1rem;
+                --img-open-color: blue;
+                --img-open-linecap: round;
+                --img-close-color: green;
+                --img-close-linecap: square;
 
-              --content-min-width: 2rem;
-              --content-max-width: 8rem;
-              --content-background-color: red;
-              --content-box-shadow: 1rem 0 0 0 rgba(0, 0, 0, 1);
+                --content-min-width: 2rem;
+                --content-max-width: 8rem;
+                --content-background-color: red;
+                --content-box-shadow: 1rem 0 0 0 rgba(0, 0, 0, 1);
 
-              --overlay-background-color: rgba(0, 255, 0, 0.3);
+                --overlay-background-color: rgba(0, 255, 0, 0.3);
 
-              --side-nav-z-index: 1;
-            }
-          </style>
+                --side-nav-z-index: 1;
+              }
+            </style>
+          </custom-style>
 
           <dynamic-side-nav id="styled-nav">
 
