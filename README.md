@@ -16,6 +16,7 @@ bower install --save MCKreukniet/dynamic-side-nav
 ```
 <custom-element-demo>
   <template>
+    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="dynamic-side-nav.html">
     <style>
       dynamic-side-nav {
