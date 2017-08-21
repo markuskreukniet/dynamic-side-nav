@@ -144,8 +144,8 @@
         var overlay = this.$.overlay;
         var contentContainer = this.$.contentContainer;
 
-        // 'display = "flex"' triggers transition, so first 'transition = 0'
-        contentContainer.style.transition = "0";
+        // 'display = "flex"' triggers transition, so first 'transitionDuration = 0s'
+        contentContainer.style.transitionDuration = "0s";
         overlay.style.display = "flex";
 
         // Parent element can't have 'display: none;', else offsetWidth is 0
